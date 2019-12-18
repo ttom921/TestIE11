@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Digest auth tester</title>
+
+    <script type="text/javascript" src="./dist/md5.js"></script>
+    <script type="text/javascript" src="./digestAuthRequest.js"></script>
+
+
+</head>
+<body>
+<h1>DigestAuthRequest.js test</h1>
+<p id="result">Requesting...</p>
+<p id="data"></p>
+</body>
+<script type="text/javascript">
+	window.onload = function() {
+
+		// digest auth request
+		var url = 'https://hsregister.tk/v0.0/users/login';
+		// create digest request object
+		
+		// make the request
+		var postData = {
+		   address: '123 main st.',
+		   city: 'Denver',
+		   state: 'Colorado'
+		}
+	
+		// create new digest request object
+		// because method (POST vs GET) is different
+		// otherwise we could re-use the first one
+		var postReq = new digestAuthRequest('POST', url, 'test123', 'test123');
+		
+		postReq.request(function(data) { 
+		  // success callback
+		  // data probably a success message
+			console.log('success');
+		},function(errorCode) { 
+		  // error callback
+		  // tell user request faialed
+			console.log('fail');
+		}, postData);
+	}
+</script>
+

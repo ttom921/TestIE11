@@ -2,15 +2,27 @@
 <html lang="en">
 
 <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=11">
   <meta charset="utf-8">
   <title>Ie11</title>
   <!-- <base href="/"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+<script type="text/javascript">
+  function callMe(arg1, arg2) {
+    //
+    let alertMessage = "arg1 is " + arg1 + " and arg2 is " + arg2 + "!";
+    alert(alertMessage);
+    //console.log("arg1 is " + arg1 + " and arg2 is " + arg2 + "!");
+    //"arg1 is " + arg1 + " and arg2 is " + arg2 + "!"
+    window.angularComponentReference.zone.run(function () { window.angularComponentReference.loadAngularFunction(arg1, arg2); });
+  }
+</script>
 
 <body>
   <app-root></app-root>
 </body>
+
 
 </html>
