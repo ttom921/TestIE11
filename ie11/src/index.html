@@ -16,8 +16,13 @@
     alert(alertMessage);
     //console.log("arg1 is " + arg1 + " and arg2 is " + arg2 + "!");
     //"arg1 is " + arg1 + " and arg2 is " + arg2 + "!"
-    window.angularComponentReference.zone.run(function () { window.angularComponentReference.loadAngularFunction(arg1, arg2); });
+    //window.angularComponentReference.zone.run(function () { window.angularComponentReference.loadAngularFunction(arg1, arg2); });
+    window["angularComponentReference"].zone.run(function () { window.angularComponentReference.loadAngularFunction(arg1, arg2); });
   }
+  function callFunc(arg1) {
+    window.external.OnWebPageReady(arg1);
+  }
+  //window.external.OnWebPageReady("DDDDDDDDDDDDDDDD");
 </script>
 
 <body>

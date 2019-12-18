@@ -17,7 +17,7 @@ namespace testMRWebBrowser
 
             //string applicationDirectory = Path.GetDirectoryName(Application.ExecutablePath);
             //string myFile = Path.Combine(applicationDirectory, "S_RCDATA\\index.html");
-
+            webBrowser1.ObjectForScripting = this;//2、設定js中window.external物件代表的類
             webBrowser1.ScriptErrorsSuppressed = true;
             //http://localhost:4400/ 
             //http://172.18.2.160/

@@ -1,5 +1,5 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-
+declare var callFunc: Function;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,6 +22,11 @@ export class AppComponent implements OnInit {
     alert(alertMessage);
     //console.log("arg1 is " + arg1 + " and arg2 is " + arg2 + "!");
     //"arg1 is " + arg1 + " and arg2 is " + arg2 + "!"
+  }
+  sendDatatoWinform() {
+    let msg = "this data form angular";
+    callFunc(msg);
+
   }
 }
 
